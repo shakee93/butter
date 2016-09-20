@@ -1,0 +1,16 @@
+{
+    "name": "traitlabs/wp-butter",
+    "description": "A backup plugin for wordpress",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "traitlabs",
+            "email": "traitlabs@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "league/flysystem": "^1.0"
+    }
+}
