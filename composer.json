@@ -11,6 +11,12 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "league/flysystem": "^1.0"
+        "league/flysystem": "^1.0",
+        "tgmpa/tgm-plugin-activation": "^2.6"
+    },
+    "autoload" : {
+        "classmap": [
+            "includes/"
+        ]
     }
 }
