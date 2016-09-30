@@ -2,7 +2,17 @@
 
 namespace Wp_butter;
 
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+
 class Backup {
+
+    /**
+     * FileSystem Instance
+     *
+     * @var Filesystem
+     */
+    protected $filesystem;
 
 
     /**
@@ -11,6 +21,16 @@ class Backup {
      * @var Backup
      */
     protected static $instance;
+
+
+    /**
+     * Backup constructor.
+     */
+    public function __construct()
+    {
+        $adapter = new Local(Core::$wp_root);
+        $this->filesystem = new Filesystem($adapter);
+    }
 
 
     /**
@@ -35,6 +55,7 @@ class Backup {
      */
     public function start(\WP_Rest_Request $request)
     {
-        return 'Here Comes Butter, Takes a look at the world for first time !!';
+        $version = Config::$wp_version;
+        return $version;
     }
 }

@@ -9,4 +9,8 @@ Version: 1.0
 Author URI: traitlabs.io
 */
 
+
+const PLUGIN_BASE_FILE = __FILE__;
+
 include 'includes/wp_butter.core.class.php';
+
