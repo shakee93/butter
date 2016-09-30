@@ -4,7 +4,6 @@ namespace Wp_butter;
 
 class Core {
 
-
     /**
      * Singleton Instance
      *
@@ -97,3 +96,8 @@ class Core {
         // we will check all the dependencies this plugin needs here
     }
 }
+
+/**
+ * Initiate the Plugin
+ */
+Core::instance()->initialize();
