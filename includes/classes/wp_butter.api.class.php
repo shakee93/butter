@@ -55,4 +55,5 @@ class Api {
 
         array_push(static::$routes, $object);
     }
+
 }

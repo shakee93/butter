@@ -2,6 +2,7 @@
 
 namespace Wp_butter;
 
+
 class Config {
 
     public static $slug = "butter";

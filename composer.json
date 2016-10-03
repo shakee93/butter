@@ -15,8 +15,6 @@
         "tgmpa/tgm-plugin-activation": "^2.6"
     },
     "autoload" : {
-        "classmap": [
-            "includes/"
-        ]
+        "classmap": [""]
     }
 }

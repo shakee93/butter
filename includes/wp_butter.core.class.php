@@ -12,6 +12,14 @@ class Core {
      */
     protected static $instance;
 
+
+    /**
+     * Actions Array
+     *
+     * @var array
+     */
+    public static $actions = array();
+
     /**
      * Core constructor.
      */
@@ -23,17 +31,6 @@ class Core {
         $this->register_actions();
         $this->initiateApi();
     }
-
-
-    /**
-     * Initialize the plugin components
-     *
-     */
-    public function initialize()
-    {
-        Config::instance();
-    }
-
 
     /**
      * Get Singleton Instance
@@ -47,6 +44,17 @@ class Core {
         }
 
         return self::$instance;
+    }
+
+
+    /**
+     * Initialize the plugin components
+     *
+     */
+    public function initialize()
+    {
+        Config::instance();
+        Frontend::instance()->initFronted();
     }
 
 
@@ -68,6 +76,25 @@ class Core {
     {
         add_action( 'tgmpa_register', [$this, 'register_dependencies'] );
         register_activation_hook(\PLUGIN_BASE_FILE, [$this, 'activation'] );
+
+        foreach (static::$actions as $action) {
+            add_action(
+                $action['tag'],
+                $action['function_to_add'],
+                $action['priority'],
+                $action['accepted_args']
+            );
+        }
+    }
+
+    public static function add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1)
+    {
+        array_push(static::$actions, [
+            'tag' => $tag,
+            'function_to_add' => $function_to_add,
+            'priority' => $priority,
+            'accepted_args' => $accepted_args
+        ]);
     }
 
     /**
