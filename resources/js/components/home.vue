@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <page header="Dashboard">
         Home is here
-    </div>
+    </page>
 </template>
 <style>
 
 </style>
 <script>
-    export default{
+    import Page from './page.vue';
 
+    export default{
+        components : {Page}
     }
 </script>

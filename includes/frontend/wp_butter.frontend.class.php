@@ -39,9 +39,7 @@ class Frontend {
     public function registerPage(){
         ?>
             <div class="wrap" id="butter-app">
-                <app>
-                    {{ message }}
-                </app>
+                <app></app>
             </div>
         <?php
     }

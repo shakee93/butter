@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shakee93/butter#readme",
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
     "gulp-webpack": "^1.5.0",

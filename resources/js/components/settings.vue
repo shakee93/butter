@@ -1,9 +1,11 @@
 <template>
-    <page header="Backup">
-        Your Backup Contents will come in here
+    <page header="Settings">
+        Settings Page will look like this
     </page>
 </template>
+
 <script>
+
     import Page from './page.vue';
 
     export default{

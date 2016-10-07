@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router';
 import Backup from './components/backup.vue';
 import Home from './components/home.vue';
+import Settings from './components/settings.vue';
 
 const routes = [
     {
@@ -10,6 +11,10 @@ const routes = [
     {
         path: '/backup',
         component: Backup
+    },
+    {
+        path: '/settings',
+        component: Settings
     }
 ];
 
