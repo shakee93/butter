@@ -1,5 +1,8 @@
 <template>
-    <page header="Backup">
+    <page
+        header="Backup"
+        :isAction="true"
+        description="Your Backup History">
         Your Backup Contents will come in here
     </page>
 </template>

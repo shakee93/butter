@@ -1,5 +1,7 @@
 <template>
-    <page header="Settings">
+    <page
+        header="Settings"
+        description="Manage plugin settings">
         Settings Page will look like this
     </page>
 </template>

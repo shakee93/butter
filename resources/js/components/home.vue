@@ -1,7 +1,12 @@
 <template>
-    <page header="Dashboard">
+
+    <page
+        header="Dashboard"
+        :isAction="true"
+        description="Your Backup Statistics">
         Home is here
     </page>
+
 </template>
 <style>
 

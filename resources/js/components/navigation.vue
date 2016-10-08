@@ -20,11 +20,6 @@
                 </router-link>
             </li>
         </ul>
-
-        <div class="header-info">
-            Where you can manage your backups
-        </div>
-
     </header>
 </template>
 

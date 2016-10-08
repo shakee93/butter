@@ -56,7 +56,21 @@ class Frontend {
             false, '1.0.0'
         );
 
+        wp_register_style(
+            'butter-app-material-icon',
+            'https://fonts.googleapis.com/icon?family=Material+Icons',
+            false, '1.0.0'
+        );
+
+        wp_register_style(
+            'roboto-font',
+            'https://fonts.googleapis.com/css?family=Roboto:400,500,900',
+            false, '1.0.0'
+        );
+
         wp_enqueue_style( 'butter-app-css' );
+        wp_enqueue_style( 'butter-app-material-icon' );
+        wp_enqueue_style( 'roboto-font' );
 
 
         wp_enqueue_script(
