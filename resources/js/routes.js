@@ -1,7 +1,9 @@
 import VueRouter from 'vue-router';
-import Backup from './components/backup.vue';
-import Home from './components/home.vue';
-import Settings from './components/settings.vue';
+
+// This is used to load components async
+const Backup = resolve => require(['./components/backup.vue'], resolve);
+const Home = resolve => require(['./components/home.vue'], resolve);
+const Settings = resolve => require(['./components/settings.vue'], resolve);
 
 const routes = [
     {

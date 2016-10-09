@@ -51,12 +51,6 @@ class Frontend {
         }
 
         wp_register_style(
-            'butter-app-css',
-            plugins_url('/public/css/app.css', \PLUGIN_BASE_FILE),
-            false, '1.0.0'
-        );
-
-        wp_register_style(
             'butter-app-material-icon',
             'https://fonts.googleapis.com/icon?family=Material+Icons',
             false, '1.0.0'
@@ -68,7 +62,6 @@ class Frontend {
             false, '1.0.0'
         );
 
-        wp_enqueue_style( 'butter-app-css' );
         wp_enqueue_style( 'butter-app-material-icon' );
         wp_enqueue_style( 'roboto-font' );
 
@@ -80,5 +73,13 @@ class Frontend {
             null,
             true
         );
+
+        $data = [
+            'plugin_url' => plugins_url("", \PLUGIN_BASE_FILE)
+        ];
+
+        wp_localize_script( 'butter-app-bundle-js', 'BUTTER', $data );
     }
+
+
 }

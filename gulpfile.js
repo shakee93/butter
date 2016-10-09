@@ -5,11 +5,6 @@ var webpack = require('gulp-webpack');
 var resourceDir = './resources/';
 var publicDir = './public/';
 
-gulp.task('styles', function () {
-    return gulp.src(resourceDir + '/sass/app.scss')
-        .pipe(sass())
-        .pipe(gulp.dest(publicDir + "/css"))
-});
 
 gulp.task('scripts', function () {
     return gulp.src(resourceDir + '/js/app.js')
@@ -18,19 +13,12 @@ gulp.task('scripts', function () {
 });
 
 
-gulp.task('default', ['scripts', 'styles']);
+gulp.task('default', ['scripts']);
 
 gulp.task('watch' , function () {
-
-    gulp.run(['default']);
-
     gulp.watch([
         resourceDir + 'js/**/*.js',
         resourceDir + 'js/**/*.vue',
-    ], ['scripts']);
-
-    gulp.watch([
         resourceDir + 'sass/**/*.scss'
-    ], ['styles']);
-
+    ], ['scripts']);
 });

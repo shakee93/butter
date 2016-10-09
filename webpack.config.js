@@ -1,9 +1,12 @@
+
+
 module.exports = {
-    entry: './resources/js/app.js',
+    entry: __dirname +'/resources/js/app.js',
     output: {
-        path: '/public/js',
+        path: __dirname  + '/public/js',
         filename: 'app.bundle.js'
     },
+    devtool: "source-map",
     module: {
         loaders: [
             {
@@ -12,6 +15,18 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue'
+            },
+            {
+                test   : /\.css$/,
+                loaders: ['style', 'css', 'resolve-url']
+            },
+            {
+                test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.scss$/,
+                loaders: ["style", "css?sourceMap", 'resolve-url', "sass?sourceMap"]
             }
         ]
     },
